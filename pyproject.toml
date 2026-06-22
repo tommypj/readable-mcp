@@ -1,0 +1,60 @@
+[project]
+name = "readable-mcp"
+version = "0.1.0"
+description = "Production MCP server that turns any URL into clean, LLM-ready Markdown — rate-limited, retried, cached, and SSRF-safe."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Dan Tomescu" }]
+requires-python = ">=3.11"
+keywords = ["mcp", "model-context-protocol", "llm", "markdown", "web-scraping", "fastmcp"]
+dependencies = [
+    "fastmcp>=2.3.0",
+    "httpx>=0.27.0",
+    "trafilatura>=1.12.0",
+    "markdownify>=0.13.0",
+    "pydantic>=2.7.0",
+    "pydantic-settings>=2.3.0",
+    "cachetools>=5.3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.2.0",
+    "pytest-asyncio>=0.23.0",
+    "respx>=0.21.0",
+    "ruff>=0.6.0",
+]
+
+[project.scripts]
+readable-mcp = "readable_mcp.server:main"
+
+[project.urls]
+Homepage = "https://github.com/dantomescu/readable-mcp"
+Repository = "https://github.com/dantomescu/readable-mcp"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/readable_mcp"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "C4", "SIM", "ASYNC"]
+ignore = ["B008"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["B017", "SIM117"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.pytest_asyncio]
+asyncio_default_fixture_loop_scope = "function"

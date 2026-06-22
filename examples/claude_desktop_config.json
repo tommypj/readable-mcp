@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "readable": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "/absolute/path/to/readable-mcp",
+        "run",
+        "readable-mcp"
+      ]
+    }
+  }
+}

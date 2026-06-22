@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Notes on Caching</title>
+  <meta name="author" content="Jane Roe">
+</head>
+<body>
+  <nav><a href="/">Home</a></nav>
+  <article>
+    <h1>Notes on Caching</h1>
+    <p>A cache trades freshness for speed. A time-to-live cache bounds that trade by
+    evicting entries after a fixed interval, so stale data cannot live forever.</p>
+    <p>Keying matters as much as eviction. Cache by the normalized request, not the
+    raw string, or two equivalent requests will miss each other and double your work.</p>
+  </article>
+  <footer>Thanks for reading.</footer>
+</body>
+</html>

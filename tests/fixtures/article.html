@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>The Case for Production-Grade Tooling</title>
+  <meta name="author" content="Dan Tomescu">
+  <meta property="article:published_time" content="2026-03-14T09:00:00Z">
+  <meta name="description" content="Why polish beats feature count.">
+  <link rel="canonical" href="https://example.com/articles/production-grade-tooling">
+</head>
+<body>
+  <header class="site-header">
+    <nav>
+      <a href="/">Home</a>
+      <a href="/blog">Blog</a>
+      <a href="/about">About</a>
+    </nav>
+  </header>
+  <aside class="sidebar">
+    <div class="ad">Buy our course now!</div>
+    <ul class="related">
+      <li><a href="/x">Related one</a></li>
+      <li><a href="/y">Related two</a></li>
+    </ul>
+  </aside>
+  <main>
+    <article>
+      <h1>The Case for Production-Grade Tooling</h1>
+      <p class="byline">By Dan Tomescu — March 14, 2026</p>
+      <p>Most demo projects collapse under real traffic because they skip the
+      unglamorous parts: timeouts, retries, rate limiting, and input validation.
+      A weekend demo fetches a URL with a bare client and prints whatever comes back.</p>
+      <h2>What production actually requires</h2>
+      <p>Production code assumes the network is hostile. Every outbound request is
+      bounded by an explicit timeout, gated by a rate limiter, and retried with
+      backoff when the upstream returns a transient error. Untrusted input is
+      validated before it can reach a socket.</p>
+      <ul>
+        <li>Explicit connect and read timeouts.</li>
+        <li>Exponential backoff with jitter on 429 and 5xx responses.</li>
+        <li>SSRF protection that resolves hostnames before connecting.</li>
+      </ul>
+      <p>The difference between a demo and a service is almost entirely in this
+      defensive plumbing, and it is exactly what a discerning client looks for.</p>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <p>Copyright 2026 Example Inc. All rights reserved.</p>
+  </footer>
+</body>
+</html>
