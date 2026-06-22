@@ -148,7 +148,7 @@ def _error(url: str, code: ErrorCode, message: str, *, retryable: bool) -> Extra
 **With [uv](https://docs.astral.sh/uv/) (recommended):**
 
 ```bash
-git clone https://github.com/dantomescu/readable-mcp.git
+git clone https://github.com/tommypj/readable-mcp.git
 cd readable-mcp
 uv sync                 # install
 uv run readable-mcp     # run the server over stdio
