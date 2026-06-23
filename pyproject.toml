@@ -29,8 +29,8 @@ dev = [
 readable-mcp = "readable_mcp.server:main"
 
 [project.urls]
-Homepage = "https://github.com/dantomescu/readable-mcp"
-Repository = "https://github.com/dantomescu/readable-mcp"
+Homepage = "https://github.com/tommypj/readable-mcp"
+Repository = "https://github.com/tommypj/readable-mcp"
 
 [build-system]
 requires = ["hatchling"]

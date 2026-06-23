@@ -46,7 +46,7 @@ class Settings(BaseSettings):
     max_batch_urls: int = 10
 
     # Outbound identity
-    user_agent: str = "readable-mcp/0.1 (+https://github.com/dantomescu/readable-mcp)"
+    user_agent: str = "readable-mcp/0.1 (+https://github.com/tommypj/readable-mcp)"
 
     # Logging
     log_level: str = "INFO"
